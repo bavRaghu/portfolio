@@ -1,0 +1,364 @@
+export const siteConfig = {
+  name: "Bavya Raghu",
+  title: "Software Engineer",
+  school: "GNITS, Hyderabad",
+  email: "bavya.raghu11@gmail.com",
+  resume:
+    "https://drive.google.com/file/d/1ecOxQxmKtA2QbPKAZ6u1gfnxYxwTu7TO/view?usp=sharing",
+  github: "https://github.com/bavRaghu/",
+  linkedin: "https://www.linkedin.com/in/bavya-raghu/",
+  leetcode: "https://leetcode.com/u/6iqnNxsi8A/",
+};
+
+export const heroContent = {
+  headline: "I like turning tangled problems into systems that just work.",
+  subheadline:
+    "Final-year IT student at GNITS, Hyderabad — building backends, AI tools, and the kind of software that handles complexity so people don't have to.",
+  tagline: "Backend · Full Stack · AI Systems",
+};
+
+export const aboutContent = {
+  paragraphs: [
+    "Most problems I enjoy start the same way: something is repetitive, fragile, or harder than it needs to be. My instinct is to map it out — what are the inputs, what should the outputs look like, and where does the logic actually belong?",
+    "I tend to reach for backend work first. APIs, auth flows, data pipelines, the unglamorous parts that hold everything together. But I also like building the full picture — a Flask service with a clean REST layer, or a Spring Boot backend wired to a Next.js frontend.",
+    "Lately I've been spending more time with AI systems — not just calling an LLM and hoping for the best, but thinking about how agents, workflows, and retrieval fit into a real architecture. The interesting part isn't the model. It's designing the system around it.",
+    "I'm still learning. That's the point. Every project teaches me something about how to structure software a little better than the last one.",
+  ],
+};
+
+export const skillCategories = [
+  {
+    id: "languages",
+    title: "Languages",
+    icon: "Code2" as const,
+    skills: ["Python", "Java", "SQL", "JavaScript", "C", "HTML", "CSS"],
+  },
+  {
+    id: "backend",
+    title: "Backend",
+    icon: "Server" as const,
+    skills: [
+      "Spring Boot",
+      "Flask",
+      "REST APIs",
+      "JWT",
+      "RBAC",
+      "OAuth",
+      "System Design",
+    ],
+  },
+  {
+    id: "frontend",
+    title: "Frontend",
+    icon: "Layout" as const,
+    skills: ["Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    id: "ai",
+    title: "AI & Machine Learning",
+    icon: "Brain" as const,
+    skills: [
+      "Machine Learning",
+      "Deep Learning",
+      "LLMs",
+      "RAG",
+      "AI Agents",
+      "Prompt Engineering",
+      "OpenAI API",
+      "Gemini API",
+      "scikit-learn",
+    ],
+  },
+  {
+    id: "cloud",
+    title: "Cloud & DevOps",
+    icon: "Cloud" as const,
+    skills: [
+      "Microsoft Azure",
+      "Docker",
+      "CI/CD",
+      "Cloud Native Applications",
+    ],
+  },
+  {
+    id: "databases",
+    title: "Databases",
+    icon: "Database" as const,
+    skills: ["MySQL", "MongoDB", "PostgreSQL"],
+  },
+  {
+    id: "tools",
+    title: "Developer Tools",
+    icon: "Wrench" as const,
+    skills: [
+      "Git",
+      "GitHub Actions",
+      "Postman",
+      "Jupyter",
+      "NumPy",
+      "Pandas",
+      "Matplotlib",
+    ],
+  },
+];
+
+export interface Project {
+  id: string;
+  title: string;
+  subtitle: string;
+  problem: string;
+  solution: string;
+  architecture: string[];
+  techStack: string[];
+  challenges: string[];
+  outcome: string;
+  github?: string;
+  liveDemo?: string;
+  status?: "concept";
+}
+
+export const projects: Project[] = [
+  {
+    id: "smartcsp",
+    title: "SmartCSP",
+    subtitle: "CSP Generator, Tester, and Optimizer",
+    problem:
+      "Creating an effective Content Security Policy is difficult because developers must manually identify every legitimate resource their website loads. Incorrect policies often break websites, while overly permissive policies reduce security.",
+    solution:
+      "Developed SmartCSP, an automated CSP generation and validation platform that analyzes live website resource behavior, generates optimized Content Security Policies, validates them against real browser activity, and provides actionable security recommendations.",
+    architecture: [
+      "Flask backend orchestrating CSP generation",
+      "Selenium browser automation for website analysis",
+      "CSP parsing and optimization engine",
+      "Dockerized execution environment",
+      "Azure deployment for scalable testing",
+      "Automated report generation pipeline",
+    ],
+    techStack: [
+      "Python",
+      "Flask",
+      "Selenium",
+      "Docker",
+      "Microsoft Azure",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+    challenges: [
+      "Accurately capturing dynamic website resource requests",
+      "Automating browser behavior using Selenium",
+      "Designing algorithms that generated restrictive yet functional CSP headers",
+      "Building a repeatable Docker-based testing pipeline",
+    ],
+    outcome:
+      "Reduced manual effort involved in CSP creation while demonstrating knowledge of web security, browser automation, cloud deployment, and scalable backend workflows.",
+    github: "https://github.com/hibahtaj/smart-csp",
+    liveDemo: "https://smartcsp-dev.azurewebsites.net/",
+  },
+  {
+    id: "resumenate",
+    title: "Resumenate",
+    subtitle: "AI-Powered Resume Optimization",
+    problem:
+      "Tailoring resumes for every job application is repetitive and time-consuming. Many candidates also struggle with ATS optimization despite having relevant skills and experience.",
+    solution:
+      "Built Resumenate, an AI-powered resume optimization platform that analyzes resumes against job descriptions, identifies missing keywords, improves ATS compatibility, and generates tailored resumes using Large Language Models.",
+    architecture: [
+      "Flask backend exposing REST APIs",
+      "Resume parsing pipeline",
+      "Job description analysis module",
+      "LLM inference layer",
+      "Keyword extraction using KeyBERT",
+      "spaCy NLP preprocessing",
+      "PDF generation pipeline",
+      "Cloud-hosted architecture",
+    ],
+    techStack: [
+      "Python",
+      "Flask",
+      "OpenAI API",
+      "Gemini API",
+      "KeyBERT",
+      "spaCy",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+    challenges: [
+      "Combining traditional NLP with LLM-based improvements",
+      "Maintaining resume formatting after modifications",
+      "Designing reliable prompt workflows for resume rewriting",
+      "Building robust PDF generation while preserving layout",
+    ],
+    outcome:
+      "Created an end-to-end AI application that combines NLP, prompt engineering, REST APIs, and document generation to automate resume optimization for job seekers.",
+    github: "https://github.com/bavRaghu/resumenate",
+    liveDemo: "https://render.com/resumenate",
+  },
+  {
+    id: "gatekeeper",
+    title: "Gatekeeper",
+    subtitle: "Auth-as-a-Service Platform",
+    problem:
+      "Modern applications often need authentication, authorization, session management, and role-based access control, but building these capabilities from scratch for every application is repetitive, time-consuming, and prone to security mistakes.",
+    solution:
+      "Built Gatekeeper, a secure Authentication-as-a-Service platform that centralizes user authentication and authorization. The platform provides Google OAuth login, JWT-based authentication, refresh token management, Role-Based Access Control (RBAC), project management, API key management, and protected REST APIs through a modular backend architecture.",
+    architecture: [
+      "Modular Spring Boot backend following layered architecture",
+      "PostgreSQL for persistent storage",
+      "JWT-based authentication with refresh token flow",
+      "Google OAuth integration",
+      "RBAC middleware protecting endpoints",
+      "Next.js frontend communicating through REST APIs",
+      "Secure API key generation and project management",
+      "Stateless authentication for scalability",
+    ],
+    techStack: [
+      "Spring Boot",
+      "Java",
+      "PostgreSQL",
+      "Spring Security",
+      "JWT",
+      "Google OAuth",
+      "REST APIs",
+      "Next.js",
+      "Tailwind CSS",
+    ],
+    challenges: [
+      "Designing a secure authentication flow that balanced usability with security",
+      "Implementing refresh token rotation and secure session management",
+      "Building flexible RBAC middleware capable of protecting different API endpoints",
+      "Debugging authentication, CORS, and distributed frontend-backend communication",
+    ],
+    outcome:
+      "Successfully developed a scalable authentication platform demonstrating secure backend engineering, API design, authentication workflows, and modular software architecture.",
+    github: "https://github.com/bavRaghu/gatekeeper-auth",
+  },
+  {
+    id: "churn",
+    title: "Customer Churn Predictor",
+    subtitle: "ML Classification & Analytics Dashboard",
+    problem:
+      "Businesses often lose customers without early warning because identifying customers likely to churn requires analyzing large amounts of behavioral data. Manual analysis is slow and unreliable.",
+    solution:
+      "Developed a machine learning application that predicts customer churn by preprocessing customer data, training multiple classification models, comparing performance, and presenting predictions through an interactive Streamlit dashboard.",
+    architecture: [
+      "Data preprocessing pipeline",
+      "Feature engineering",
+      "Model training and evaluation",
+      "Random Forest and Logistic Regression comparison",
+      "Prediction API",
+      "Streamlit frontend for visualization",
+      "Interactive analytics dashboard",
+    ],
+    techStack: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "scikit-learn",
+      "Matplotlib",
+      "Streamlit",
+    ],
+    challenges: [
+      "Handling missing and categorical data",
+      "Selecting meaningful features for prediction",
+      "Comparing multiple models objectively",
+      "Making predictions understandable through visualization",
+    ],
+    outcome:
+      "Achieved approximately 74% prediction accuracy with an ROC-AUC score of ~0.83, demonstrating practical machine learning, model evaluation, and data visualization skills.",
+    github: "https://github.com/bavRaghu/customer-churn-predictor",
+    liveDemo: "https://customers-churn-predictor.streamlit.app/",
+  },
+  {
+    id: "ai-docs",
+    title: "AI Documentation Platform",
+    subtitle: "Multi-Agent Codebase Documentation — Concept",
+    status: "concept",
+    problem:
+      "Software documentation quickly becomes outdated as codebases evolve. New developers often spend significant time understanding repository structure, system architecture, APIs, and code relationships because existing documentation is incomplete, inconsistent, or missing altogether.",
+    solution:
+      "Designed the concept for an AI-powered documentation platform that automatically analyzes an entire codebase and generates structured, developer-friendly documentation. Instead of relying on a single LLM prompt, the platform uses multiple specialized AI agents that collaborate to understand repository structure, extract architectural insights, generate diagrams, write documentation, and review the final output.",
+    architecture: [
+      "Repository Analysis Agent — scans structure, dependencies, APIs, and code relationships",
+      "Planning Agent — creates documentation strategy and hierarchy",
+      "Documentation Agent — generates technical docs for components, APIs, and workflows",
+      "Diagram Generation Agent — produces architecture diagrams, flowcharts, and dependency graphs",
+      "Formatting Agent — organizes output with navigation, Markdown, and cross-references",
+      "Review & QA Agent — verifies completeness and detects inconsistencies",
+      "Shared orchestration layer connecting all agents",
+    ],
+    techStack: [
+      "Python",
+      "LangChain",
+      "LangGraph",
+      "LLM APIs (OpenAI / Gemini)",
+      "RAG",
+      "Knowledge Graphs",
+      "FastAPI / Flask",
+      "PostgreSQL / Vector Database",
+      "Next.js / React",
+    ],
+    challenges: [
+      "Understanding large repositories with complex dependency graphs",
+      "Maintaining context across multiple AI agents while avoiding duplicated outputs",
+      "Generating accurate architecture diagrams directly from source code",
+      "Ensuring generated documentation remains consistent and maintainable",
+      "Designing an orchestration workflow that allows agents to collaborate efficiently",
+    ],
+    outcome:
+      "Currently in the architecture and planning phase. Demonstrates an interest in agentic AI, developer productivity, and automated documentation systems.",
+  },
+];
+
+export const learningTopics = [
+  { name: "LangChain", status: "exploring" },
+  { name: "LangGraph", status: "exploring" },
+  { name: "Agentic AI", status: "active" },
+  { name: "AI Workflows", status: "active" },
+  { name: "Multi-agent systems", status: "exploring" },
+  { name: "Modern backend architecture", status: "active" },
+  { name: "APIs", status: "active" },
+  { name: "Automation", status: "active" },
+];
+
+export const engineeringPrinciples = [
+  {
+    principle: "Software should quietly remove work — not quietly add it.",
+    detail: "If a feature creates more steps for the user, something went wrong upstream.",
+  },
+  {
+    principle: "Repetition is a design smell.",
+    detail: "If you're doing the same thing twice, the system probably needs a better abstraction.",
+  },
+  {
+    principle: "Clear boundaries beat clever shortcuts.",
+    detail: "Modules with obvious responsibilities are easier to debug at 2 AM.",
+  },
+  {
+    principle: "Understand the shape of the problem before optimising the code.",
+    detail: "A fast solution to the wrong problem is still the wrong problem.",
+  },
+  {
+    principle: "Documentation is part of the architecture.",
+    detail: "If another engineer can't follow your system, the design isn't finished.",
+  },
+];
+
+export const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Learning", href: "#learning" },
+  { label: "Contact", href: "#contact" },
+];
+
+export const sectionIds = [
+  "hero",
+  "about",
+  "skills",
+  "projects",
+  "learning",
+  "principles",
+  "contact",
+] as const;

@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-coral: #d77078;
+  --color-aqua: #c5fffd;
+  --color-frost: #88d9e6;
+  --color-granite: #526760;
+  --color-slate: #374b4a;
+  --color-background: #1a2423;
+  --color-surface: #243230;
+  --color-surface-elevated: #2d3e3c;
+  --color-border: rgba(136, 217, 230, 0.12);
+  --color-border-active: rgba(136, 217, 230, 0.35);
+  --color-muted: #8a9e9a;
+  --color-foreground: #e8f0ee;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(215, 112, 120, 0.35);
+  color: var(--color-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-frost);
+  outline-offset: 2px;
+}
+
+.glass {
+  background: rgba(36, 50, 48, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(136, 217, 230, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(136, 217, 230, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.section-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-frost);
+}
+
+.connector-line {
+  stroke: rgba(136, 217, 230, 0.2);
+  stroke-width: 1;
+  fill: none;
+}
+
+.connector-line-active {
+  stroke: rgba(136, 217, 230, 0.55);
+  filter: drop-shadow(0 0 4px rgba(136, 217, 230, 0.3));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
