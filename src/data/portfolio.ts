@@ -11,7 +11,7 @@ export const siteConfig = {
 };
 
 export const heroContent = {
-  headline: "I like turning tangled problems into systems that just work.",
+  headline: "I build backends, APIs, and tools that automate repetitive work.",
   subheadline:
     "Final-year IT student at GNITS, Hyderabad — building backends, AI tools, and the kind of software that handles complexity so people don't have to.",
   tagline: "Backend · Full Stack · AI Systems",
@@ -19,10 +19,7 @@ export const heroContent = {
 
 export const aboutContent = {
   paragraphs: [
-    "Most problems I enjoy start the same way: something is repetitive, fragile, or harder than it needs to be. My instinct is to map it out — what are the inputs, what should the outputs look like, and where does the logic actually belong?",
-    "I tend to reach for backend work first. APIs, auth flows, data pipelines, the unglamorous parts that hold everything together. But I also like building the full picture — a Flask service with a clean REST layer, or a Spring Boot backend wired to a Next.js frontend.",
-    "Lately I've been spending more time with AI systems — not just calling an LLM and hoping for the best, but thinking about how agents, workflows, and retrieval fit into a real architecture. The interesting part isn't the model. It's designing the system around it.",
-    "I'm still learning. That's the point. Every project teaches me something about how to structure software a little better than the last one.",
+    "I'm a final-year Information Technology student who enjoys turning ideas into products people can actually use. Over the past few years, I've worked with Java, Python, React, Spring Boot, Flask, Docker, and a growing collection of AI tools to build applications focused on automation and productivity. When I'm not in class, you'll usually find me working on side projects, learning something new, or volunteering to take the lead.",
   ],
 };
 
@@ -31,7 +28,7 @@ export const skillCategories = [
     id: "languages",
     title: "Languages",
     icon: "Code2" as const,
-    skills: ["Python", "Java", "SQL", "JavaScript", "C", "HTML", "CSS"],
+    skills: ["Python", "Java", "SQL", "JavaScript", "C"],
   },
   {
     id: "backend",
@@ -51,22 +48,25 @@ export const skillCategories = [
     id: "frontend",
     title: "Frontend",
     icon: "Layout" as const,
-    skills: ["Next.js", "React", "Tailwind CSS"],
+    skills: ["Next.js", "React", "Tailwind CSS", "HTML", "CSS"],
+  },
+  {
+    id: "ml",
+    title: "Machine Learning & Data",
+    icon: "Database" as const,
+    skills: ["Pandas", "NumPy", "scikit-learn", "Matplotlib"],
   },
   {
     id: "ai",
-    title: "AI & Machine Learning",
+    title: "AI & Tools",
     icon: "Brain" as const,
     skills: [
-      "Machine Learning",
-      "Deep Learning",
       "LLMs",
       "RAG",
       "AI Agents",
       "Prompt Engineering",
       "OpenAI API",
       "Gemini API",
-      "scikit-learn",
     ],
   },
   {
@@ -95,9 +95,6 @@ export const skillCategories = [
       "GitHub Actions",
       "Postman",
       "Jupyter",
-      "NumPy",
-      "Pandas",
-      "Matplotlib",
     ],
   },
 ];
@@ -273,8 +270,7 @@ export const projects: Project[] = [
   {
     id: "ai-docs",
     title: "AI Documentation Platform",
-    subtitle: "Multi-Agent Codebase Documentation — Concept",
-    status: "concept",
+    subtitle: "Multi-Agent Codebase Documentation (In progress)",
     problem:
       "Software documentation quickly becomes outdated as codebases evolve. New developers often spend significant time understanding repository structure, system architecture, APIs, and code relationships because existing documentation is incomplete, inconsistent, or missing altogether.",
     solution:
@@ -322,34 +318,31 @@ export const learningTopics = [
   { name: "Automation", status: "active" },
 ];
 
-export const engineeringPrinciples = [
-  {
-    principle: "Software should quietly remove work — not quietly add it.",
-    detail: "If a feature creates more steps for the user, something went wrong upstream.",
-  },
-  {
-    principle: "Repetition is a design smell.",
-    detail: "If you're doing the same thing twice, the system probably needs a better abstraction.",
-  },
-  {
-    principle: "Clear boundaries beat clever shortcuts.",
-    detail: "Modules with obvious responsibilities are easier to debug at 2 AM.",
-  },
-  {
-    principle: "Understand the shape of the problem before optimising the code.",
-    detail: "A fast solution to the wrong problem is still the wrong problem.",
-  },
-  {
-    principle: "Documentation is part of the architecture.",
-    detail: "If another engineer can't follow your system, the design isn't finished.",
-  },
-];
+export const certifications = {
+  HackerRank: [
+    "Software Engineering Intern",
+    "REST APIs (Intermediate)",
+    "SQL (Intermediate)",
+    "Problem Solving (Basic)",
+  ],
+  Cisco: [
+    "Introduction to Modern AI",
+    "Network Defence",
+    "Cyber Threat Management",
+  ],
+  DataCamp: [
+    "LLM Applications with LangChain",
+    "Designing Agentic Systems with LangChain",
+    "Multi-Agent Systems with LangGraph",
+    "Generative AI",
+    "Machine Learning",
+  ],
+};
 
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Learning", href: "#learning" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -358,7 +351,5 @@ export const sectionIds = [
   "about",
   "skills",
   "projects",
-  "learning",
-  "principles",
   "contact",
 ] as const;

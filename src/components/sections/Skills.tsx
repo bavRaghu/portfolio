@@ -32,7 +32,6 @@ export function Skills() {
       id="skills"
       label="02 — Skills"
       title="What I build with"
-      description="Tools and technologies I reach for — no ratings, just the stack."
       wide
     >
       <motion.div

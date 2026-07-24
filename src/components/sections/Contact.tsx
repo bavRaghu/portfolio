@@ -64,9 +64,8 @@ export function Contact() {
         className="max-w-2xl"
       >
         <motion.p variants={staggerItem} className="mb-10 text-lg text-muted">
-          If something here resonated, I'd like to hear from you. Whether it's
-          a role, a collaboration, or just a question about one of the projects
-          — reach out.
+          If something here resonated, I would like to hear from you. Whether it is
+          a role, a collaboration, or just a question about one of the projects — reach out.
         </motion.p>
 
         <div className="mb-10 grid gap-3 sm:grid-cols-2">

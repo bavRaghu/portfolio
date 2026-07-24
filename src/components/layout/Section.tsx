@@ -26,14 +26,14 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative scroll-mt-24 py-24 md:py-32 lg:py-40",
+        "relative scroll-mt-20 py-12 md:py-16 lg:py-20",
         className
       )}
     >
       <div
         className={cn(
           "mx-auto px-6 md:px-8",
-          wide ? "max-w-7xl" : "max-w-5xl"
+          wide ? "max-w-7xl" : "max-w-7xl"
         )}
       >
         <motion.div
