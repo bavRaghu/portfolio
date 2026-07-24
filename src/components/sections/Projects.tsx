@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Box, Sparkles, Key, TrendingDown, Book } from "lucide-react";
+import { ExternalLink, Github, Shield, Sparkles, Key, TrendingDown, Book } from "lucide-react";
 import { projects, type Project } from "@/data/portfolio";
 import { staggerContainer, staggerItem } from "@/lib/motion";
 import { Section } from "@/components/layout/Section";
@@ -16,14 +16,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
   // Map project IDs to meaningful icons
   const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-    smartcsp: Box,
+    smartcsp: Shield,
     resumenate: Sparkles,
     gatekeeper: Key,
     churn: TrendingDown,
     "ai-docs": Book,
   };
 
-  const Icon = (iconMap[project.id] ?? Box) as React.ComponentType<{ size?: number; className?: string }>;
+  const Icon = (iconMap[project.id] ?? Shield) as React.ComponentType<{ size?: number; className?: string }>;
 
   return (
     <motion.article
@@ -84,7 +84,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           ))}
         </div>
 
-        <p className="text-sm leading-relaxed text-muted">{project.subtitle}</p>
+        <p className="text-sm leading-relaxed text-muted">{project.problem}</p>
       </div>
     </motion.article>
   );
@@ -98,7 +98,6 @@ export function Projects() {
       label="03 — Projects"
       title="Projects"
       description="Selected projects"
-      wide
     >
       <motion.div
         variants={staggerContainer}

@@ -32,7 +32,6 @@ export function Skills() {
       id="skills"
       label="02 — Skills"
       title="What I build with"
-      wide
     >
       <motion.div
         variants={staggerContainer}

@@ -49,8 +49,8 @@ body {
 
 .blueprint-grid {
   background-image:
-    linear-gradient(rgba(136, 217, 230, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(136, 217, 230, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(136, 217, 230, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(136, 217, 230, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -63,14 +63,14 @@ body {
 }
 
 .connector-line {
-  stroke: rgba(136, 217, 230, 0.2);
+  stroke: rgba(136, 217, 230, 0.28);
   stroke-width: 1;
   fill: none;
 }
 
 .connector-line-active {
-  stroke: rgba(136, 217, 230, 0.55);
-  filter: drop-shadow(0 0 4px rgba(136, 217, 230, 0.3));
+  stroke: rgba(136, 217, 230, 0.72);
+  filter: drop-shadow(0 0 6px rgba(136, 217, 230, 0.4));
 }
 
 @media (prefers-reduced-motion: reduce) {

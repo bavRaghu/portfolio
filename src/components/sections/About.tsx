@@ -1,62 +1,145 @@
 "use client";
 
+import { useState, type Dispatch, type SetStateAction } from "react";
 import { motion } from "framer-motion";
-import { aboutContent, learningTopics, certifications } from "@/data/portfolio";
+import { aboutContent } from "@/data/portfolio";
 import { staggerContainer, staggerItem } from "@/lib/motion";
 import { Section } from "@/components/layout/Section";
-import { BookOpen } from "lucide-react";
+import { Sparkles, Cpu, RefreshCcw } from "lucide-react";
+
+const certificationCards = [
+  {
+    title: "Backend",
+    subtitle: "HackerRank",
+    items: ["Software Engineering", "REST APIs", "SQL", "Problem Solving"],
+  },
+  {
+    title: "AI",
+    subtitle: "DataCamp",
+    items: ["LangChain", "LangGraph", "Generative AI", "Machine Learning"],
+  },
+];
+
+const exploringCards = [
+  {
+    title: "AI Systems",
+    items: ["LangChain", "LangGraph", "Agentic AI", "AI Workflows"],
+  },
+  {
+    title: "Engineering",
+    items: ["Multi-agent Systems", "Modern Backend Architecture", "APIs", "Automation"],
+  },
+];
+
+function rotateCard(
+  cardIndex: number,
+  cardArray: { items: string[] }[],
+  setIndex: Dispatch<SetStateAction<number[]>>
+) {
+  setIndex((prev) =>
+    prev.map((value, i) =>
+      i === cardIndex ? (value + 1) % cardArray[cardIndex].items.length : value
+    )
+  );
+}
 
 export function About() {
+  const [certIndex, setCertIndex] = useState([0, 0]);
+  const [exploreIndex, setExploreIndex] = useState([0, 0]);
+
   return (
     <Section
       id="about"
       label="01 — About"
       title="About"
+      description="Not a biography. Just the way I approach problems."
     >
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
-        className="grid gap-6 md:grid-cols-4"
+        className="space-y-8"
       >
-        {/* Left: 75% (3 cols) */}
-        <motion.div variants={staggerItem} className="md:col-span-3">
-          <p className="text-lg leading-relaxed text-muted">
-            {aboutContent.paragraphs[0]}
-          </p>
+        <motion.div variants={staggerItem} className="glass rounded-3xl border border-border bg-surface/60 p-8">
+          <p className="text-lg leading-relaxed text-muted">{aboutContent.paragraphs[0]}</p>
         </motion.div>
 
-        {/* Right: 25% (1 col) - stacked cards */}
-        <motion.div variants={staggerItem} className="space-y-4 md:col-span-1">
-          <div className="glass rounded-2xl border border-border p-4">
-            <div className="mb-3 flex items-center gap-2">
-              <BookOpen size={16} className="text-frost" />
-              <h4 className="text-sm font-medium text-foreground">Currently Learning</h4>
-            </div>
-            <div className="grid gap-2">
-              {learningTopics.map((t) => (
-                <div key={t.name} className="flex items-center justify-between rounded-md bg-surface/30 px-3 py-2 text-sm">
-                  <span className="text-foreground">{t.name}</span>
-                  <span className="font-mono text-xs text-granite">{t.status}</span>
-                </div>
-              ))}
-            </div>
+        <motion.div variants={staggerItem} className="glass rounded-3xl border border-border bg-surface/60 p-6">
+          <div className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-frost/80">
+            Stuff I'm Learning
           </div>
 
-          <div className="glass rounded-2xl border border-border p-4">
-            <h4 className="mb-3 text-sm font-medium text-foreground">Certifications & Learning</h4>
-            <div className="space-y-3 text-sm text-muted">
-              {Object.entries(certifications).map(([provider, items]) => (
-                <div key={provider}>
-                  <div className="mb-1 font-medium text-foreground">{provider}</div>
-                  <ul className="ml-3 list-disc">
-                    {items.map((it) => (
-                      <li key={it} className="text-sm text-muted">{it}</li>
-                    ))}
-                  </ul>
+          <div className="grid gap-6 xl:grid-cols-2">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between rounded-3xl border border-border/40 bg-background/80 px-4 py-3">
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Certifications</p>
+                  <p className="text-xs text-granite">Flashcards by topic</p>
                 </div>
-              ))}
+                <Sparkles size={18} className="text-frost" />
+              </div>
+
+              <div className="grid gap-4">
+                {certificationCards.map((card, index) => (
+                  <button
+                    key={card.title}
+                    type="button"
+                    onClick={() => rotateCard(index, certificationCards, setCertIndex)}
+                    className="group flex h-32 flex-col justify-between rounded-3xl border border-border/40 bg-surface/30 p-4 text-left transition-colors duration-200 hover:border-frost/30 hover:bg-surface/40"
+                  >
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{card.title}</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.24em] text-granite">
+                        {card.subtitle}
+                      </p>
+                    </div>
+                    <div className="grid gap-2">
+                      <span className="rounded-full bg-frost/10 px-3 py-1 text-xs text-foreground">
+                        {card.items[certIndex[index]]}
+                      </span>
+                      <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-frost/70">
+                        <RefreshCcw size={14} />
+                        Shuffle
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-center justify-between rounded-3xl border border-border/40 bg-background/80 px-4 py-3">
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Currently Exploring</p>
+                  <p className="text-xs text-granite">Flashcards by track</p>
+                </div>
+                <Cpu size={18} className="text-frost" />
+              </div>
+
+              <div className="grid gap-4">
+                {exploringCards.map((card, index) => (
+                  <button
+                    key={card.title}
+                    type="button"
+                    onClick={() => rotateCard(index, exploringCards, setExploreIndex)}
+                    className="group flex h-32 flex-col justify-between rounded-3xl border border-border/40 bg-surface/30 p-4 text-left transition-colors duration-200 hover:border-frost/30 hover:bg-surface/40"
+                  >
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{card.title}</p>
+                    </div>
+                    <div className="grid gap-2">
+                      <span className="rounded-full bg-frost/10 px-3 py-1 text-xs text-foreground">
+                        {card.items[exploreIndex[index]]}
+                      </span>
+                      <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-frost/70">
+                        <RefreshCcw size={14} />
+                        Shuffle
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

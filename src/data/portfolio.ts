@@ -120,7 +120,7 @@ export const projects: Project[] = [
     title: "SmartCSP",
     subtitle: "CSP Generator, Tester, and Optimizer",
     problem:
-      "Creating an effective Content Security Policy is difficult because developers must manually identify every legitimate resource their website loads. Incorrect policies often break websites, while overly permissive policies reduce security.",
+      "SmartCSP solves brittle, manual CSP creation by automatically analyzing live website resource behavior and generating optimized policies. It validates policies against real browser activity, highlights breaking resources, and creates recommendations that reduce false positives. It was built to make web security easier to maintain and to remove the guesswork from CSP authoring.",
     solution:
       "Developed SmartCSP, an automated CSP generation and validation platform that analyzes live website resource behavior, generates optimized Content Security Policies, validates them against real browser activity, and provides actionable security recommendations.",
     architecture: [
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     title: "Resumenate",
     subtitle: "AI-Powered Resume Optimization",
     problem:
-      "Tailoring resumes for every job application is repetitive and time-consuming. Many candidates also struggle with ATS optimization despite having relevant skills and experience.",
+      "Resumenate solves repetitive resume tailoring by analyzing resumes against job descriptions and generating ATS-friendly rewrites. It combines job matching, keyword extraction, and LLM-driven content improvements to keep formatting intact. It was built to help candidates save time and submit resumes that better align with each opportunity.",
     solution:
       "Built Resumenate, an AI-powered resume optimization platform that analyzes resumes against job descriptions, identifies missing keywords, improves ATS compatibility, and generates tailored resumes using Large Language Models.",
     architecture: [
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     title: "Gatekeeper",
     subtitle: "Auth-as-a-Service Platform",
     problem:
-      "Modern applications often need authentication, authorization, session management, and role-based access control, but building these capabilities from scratch for every application is repetitive, time-consuming, and prone to security mistakes.",
+      "Gatekeeper solves repetitive authentication and authorization work by centralizing login, RBAC, session management, and API key control into one service. It handles Google OAuth, JWT refresh tokens, and protected REST APIs through a modular Spring Boot backend. It was built to make secure auth infrastructure reusable and easier to integrate across applications.",
     solution:
       "Built Gatekeeper, a secure Authentication-as-a-Service platform that centralizes user authentication and authorization. The platform provides Google OAuth login, JWT-based authentication, refresh token management, Role-Based Access Control (RBAC), project management, API key management, and protected REST APIs through a modular backend architecture.",
     architecture: [
@@ -236,7 +236,7 @@ export const projects: Project[] = [
     title: "Customer Churn Predictor",
     subtitle: "ML Classification & Analytics Dashboard",
     problem:
-      "Businesses often lose customers without early warning because identifying customers likely to churn requires analyzing large amounts of behavioral data. Manual analysis is slow and unreliable.",
+      "Customer Churn Predictor solves the challenge of spotting at-risk customers before they leave by training predictive models on behavioral data. It preprocesses customer data, compares multiple classification models, and exposes predictions through a Streamlit dashboard. It was built to help teams make retention decisions faster and with more confidence.",
     solution:
       "Developed a machine learning application that predicts customer churn by preprocessing customer data, training multiple classification models, comparing performance, and presenting predictions through an interactive Streamlit dashboard.",
     architecture: [
@@ -272,7 +272,7 @@ export const projects: Project[] = [
     title: "AI Documentation Platform",
     subtitle: "Multi-Agent Codebase Documentation (In progress)",
     problem:
-      "Software documentation quickly becomes outdated as codebases evolve. New developers often spend significant time understanding repository structure, system architecture, APIs, and code relationships because existing documentation is incomplete, inconsistent, or missing altogether.",
+      "AI Documentation Platform solves outdated developer docs by planning a multi-agent system that analyzes code, extracts architecture, and generates structured documentation. It uses agents for repository understanding, diagram creation, and review so documentation can keep pace with evolving code. It was built as a concept to demonstrate how automation can make technical documentation more reliable and easier to maintain.",
     solution:
       "Designed the concept for an AI-powered documentation platform that automatically analyzes an entire codebase and generates structured, developer-friendly documentation. Instead of relying on a single LLM prompt, the platform uses multiple specialized AI agents that collaborate to understand repository structure, extract architectural insights, generate diagrams, write documentation, and review the final output.",
     architecture: [
@@ -291,9 +291,10 @@ export const projects: Project[] = [
       "LLM APIs (OpenAI / Gemini)",
       "RAG",
       "Knowledge Graphs",
-      "FastAPI / Flask",
-      "PostgreSQL / Vector Database",
-      "Next.js / React",
+      "FastAPI",
+      "Vector Database",
+      "Next.js",
+      "React",
     ],
     challenges: [
       "Understanding large repositories with complex dependency graphs",
@@ -317,27 +318,6 @@ export const learningTopics = [
   { name: "APIs", status: "active" },
   { name: "Automation", status: "active" },
 ];
-
-export const certifications = {
-  HackerRank: [
-    "Software Engineering Intern",
-    "REST APIs (Intermediate)",
-    "SQL (Intermediate)",
-    "Problem Solving (Basic)",
-  ],
-  Cisco: [
-    "Introduction to Modern AI",
-    "Network Defence",
-    "Cyber Threat Management",
-  ],
-  DataCamp: [
-    "LLM Applications with LangChain",
-    "Designing Agentic Systems with LangChain",
-    "Multi-Agent Systems with LangGraph",
-    "Generative AI",
-    "Machine Learning",
-  ],
-};
 
 export const navLinks = [
   { label: "About", href: "#about" },

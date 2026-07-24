@@ -10,7 +10,6 @@ interface SectionProps {
   description?: string;
   children: React.ReactNode;
   className?: string;
-  wide?: boolean;
 }
 
 export function Section({
@@ -20,7 +19,6 @@ export function Section({
   description,
   children,
   className,
-  wide = false,
 }: SectionProps) {
   return (
     <section
@@ -30,12 +28,7 @@ export function Section({
         className
       )}
     >
-      <div
-        className={cn(
-          "mx-auto px-6 md:px-8",
-          wide ? "max-w-7xl" : "max-w-7xl"
-        )}
-      >
+      <div className={cn("mx-auto px-6 md:px-8", "max-w-7xl")}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

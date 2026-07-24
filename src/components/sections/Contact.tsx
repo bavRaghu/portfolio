@@ -8,12 +8,12 @@ import {
   Mail,
   FileText,
   Code2,
+  ExternalLink,
   ArrowUpRight,
 } from "lucide-react";
 import { siteConfig } from "@/data/portfolio";
 import { staggerContainer, staggerItem } from "@/lib/motion";
 import { Section } from "@/components/layout/Section";
-import { Button } from "@/components/ui/button";
 
 const contactLinks = [
   {
@@ -41,6 +41,12 @@ const contactLinks = [
     icon: Code2,
   },
   {
+    label: "Codolio",
+    value: "bavya-raghu",
+    href: "https://codolio.com/profile/ILTJWHrP",
+    icon: ExternalLink,
+  },
+  {
     label: "Resume",
     value: "View PDF",
     href: siteConfig.resume,
@@ -52,8 +58,8 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      label="06 — Contact"
-      title="Let's build something"
+      label="05 — Contact"
+      title="Let's build together :)"
       description="Open to software engineering, backend, full stack, and AI engineering roles."
     >
       <motion.div
@@ -61,52 +67,36 @@ export function Contact() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
-        className="max-w-2xl"
+        className="grid gap-4 sm:grid-cols-3"
       >
-        <motion.p variants={staggerItem} className="mb-10 text-lg text-muted">
-          If something here resonated, I would like to hear from you. Whether it is
-          a role, a collaboration, or just a question about one of the projects — reach out.
-        </motion.p>
-
-        <div className="mb-10 grid gap-3 sm:grid-cols-2">
-          {contactLinks.map((link) => (
-            <motion.div key={link.label} variants={staggerItem}>
-              <Link
-                href={link.href}
-                target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                rel={
-                  link.href.startsWith("mailto")
-                    ? undefined
-                    : "noopener noreferrer"
-                }
-                className="group flex items-center gap-4 rounded-xl border border-border bg-surface/30 px-5 py-4 transition-all duration-300 hover:border-frost/30 hover:bg-surface/50"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-frost/10 text-frost transition-colors group-hover:bg-frost/15">
+        {contactLinks.map((link) => (
+          <motion.div key={link.label} variants={staggerItem}>
+            <Link
+              href={link.href}
+              target={link.href.startsWith("mailto") ? undefined : "_blank"}
+              rel={
+                link.href.startsWith("mailto")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
+              className="group flex h-full flex-col justify-between gap-4 rounded-3xl border border-border bg-surface/30 p-5 text-left transition duration-300 hover:border-frost/30 hover:bg-surface/50"
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-frost/10 text-frost transition-colors group-hover:bg-frost/15">
                   <link.icon size={18} />
                 </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-xs text-muted">{link.label}</p>
-                  <p className="truncate text-sm font-medium text-foreground">
-                    {link.value}
-                  </p>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.24em] text-granite">{link.label}</p>
+                  <p className="mt-1 text-sm font-medium text-foreground">{link.value}</p>
                 </div>
-                <ArrowUpRight
-                  size={16}
-                  className="shrink-0 text-muted opacity-0 transition-all group-hover:opacity-100 group-hover:text-frost"
-                />
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div variants={staggerItem}>
-          <Button size="lg" asChild>
-            <Link href={`mailto:${siteConfig.email}`}>
-              <Mail size={18} />
-              Send an email
+              </div>
+              <ArrowUpRight
+                size={16}
+                className="text-muted opacity-60 transition-all group-hover:text-frost"
+              />
             </Link>
-          </Button>
-        </motion.div>
+          </motion.div>
+        ))}
       </motion.div>
     </Section>
   );

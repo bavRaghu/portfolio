@@ -50,7 +50,7 @@ function getNode(id: string) {
 export function BlueprintBackground() {
   const scrollProgress = useScrollProgress();
   const activeSection = useActiveSection(sectionIds);
-  const illumination = 0.12 + scrollProgress * 0.28;
+  const illumination = 0.14 + scrollProgress * 0.32;
 
   return (
     <div
