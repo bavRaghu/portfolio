@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bavya Raghu — Software Engineer",
+  title: "Bavya Raghu",
   description:
     "Final-year IT student at GNITS, Hyderabad. Building backend systems, AI applications, and software that quietly does the hard work.",
   keywords: [
