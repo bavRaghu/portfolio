@@ -60,7 +60,7 @@ export function Contact() {
       id="contact"
       label="05 — Contact"
       title="Let's build together :)"
-      description="Open to software engineering, backend, full stack, and AI engineering roles."
+      description="Open to software engineering, full stack, data and AI engineering roles."
     >
       <motion.div
         variants={staggerContainer}

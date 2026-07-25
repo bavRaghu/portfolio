@@ -97,7 +97,7 @@ export function Projects() {
       id="projects"
       label="03 — Projects"
       title="Projects"
-      description="Selected projects"
+      description=""
     >
       <motion.div
         variants={staggerContainer}

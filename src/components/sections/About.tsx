@@ -52,7 +52,7 @@ export function About() {
       id="about"
       label="01 — About"
       title="About"
-      description="Not a biography. Just the way I approach problems."
+      description=""
     >
       <motion.div
         variants={staggerContainer}
@@ -67,7 +67,7 @@ export function About() {
 
         <motion.div variants={staggerItem} className="glass rounded-3xl border border-border bg-surface/60 p-6">
           <div className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-frost/80">
-            Stuff I'm Learning
+            Stuff I&apos;m Learning
           </div>
 
           <div className="grid gap-6 xl:grid-cols-2">
@@ -75,7 +75,6 @@ export function About() {
               <div className="flex items-center justify-between rounded-3xl border border-border/40 bg-background/80 px-4 py-3">
                 <div>
                   <p className="text-sm font-semibold text-foreground">Certifications</p>
-                  <p className="text-xs text-granite">Flashcards by topic</p>
                 </div>
                 <Sparkles size={18} className="text-frost" />
               </div>
@@ -112,7 +111,6 @@ export function About() {
               <div className="flex items-center justify-between rounded-3xl border border-border/40 bg-background/80 px-4 py-3">
                 <div>
                   <p className="text-sm font-semibold text-foreground">Currently Exploring</p>
-                  <p className="text-xs text-granite">Flashcards by track</p>
                 </div>
                 <Cpu size={18} className="text-frost" />
               </div>
